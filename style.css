@@ -84,6 +84,7 @@ main {
 	background-color: #fff;
 	position: relative;
 }
+
 .popup__close {
 	width: 30px;
 	height: 30px;
@@ -91,6 +92,7 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-radius: 5px;
 	cursor:  pointer;
 	position: absolute;
 	top: 10px;

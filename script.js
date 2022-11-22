@@ -35,7 +35,18 @@ const createCard = function(cat, parent) {
 		// cat.id
 	}
 
-	card.append(img, name);
+	//card.append(img, name);
+	//parent.append(card);
+
+	const del = document.createElement("button");
+	del.innerText = "delete";
+	del.id = cat.id;
+	del.addEventListener("click", function(e) {
+		let id = e.target.id;
+		deleteCat(id, card);
+	});
+
+	card.append(img, name, del);
 	parent.append(card);
 }
 
@@ -74,7 +85,7 @@ fetch("https://sb-cats.herokuapp.com/api/2/KhmKaM/show")
 }
 */
 
-const addCat = function() {
+const addCat = function(cat) {
 	fetch("https://sb-cats.herokuapp.com/api/2/KhmKaM/add", {
 		method: "POST",
 		headers: { // обязательно для POST/PUT/PATCH
@@ -99,10 +110,23 @@ const addCat = function() {
 		})
 }
 
+const deleteCat = function(id, tag) {
+	fetch(`https://sb-cats.herokuapp.com/api/2/KhmKaM/delete/${id}`, {
+		method: "DELETE"
+	})
+	.then(res => res.json()
+	.then(data => {
+		console.log(data);
+		if (data.message === "ok") {
+			tag.remove();
+		}
+	}))
+}
+
 addForm.addEventListener("submit", function(e) {
 	e.preventDefault();
 	let body = {}; 
-
+	//console.log("Hey!");
 	for (let i = 0; i < addForm.elements.length; i++) {
 		let el = addForm.elements[i];
 		console.log(el);
