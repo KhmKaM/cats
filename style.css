@@ -17,11 +17,15 @@ a {
 	grid-template-rows: 70px 1fr 50px;
 }
 header, footer {
-	background-color: #222;
+	background-color: #11041a;
 	color:  #fff;
 	padding: 0 30px;
 	display: flex;
 	align-items: center;
+}
+nav {
+	display: flex;
+	gap: 20px;
 }
 header {
 	justify-content: space-between;
@@ -48,6 +52,8 @@ main {
 	gap: 20px;
 	padding: 10px;
 	border: 1px solid;
+	background-color: #dedede;
+	border-radius: 9px;
 }
 
 .card-pic {
@@ -56,6 +62,7 @@ main {
 	background-repeat: no-repeat;
 	background-color: #dedede;
 	height: 180px;
+	border-radius: 8px;
 }
 
 .card h3 {
@@ -83,8 +90,11 @@ main {
 	padding: 20px;
 	background-color: #fff;
 	position: relative;
+	display: none;
 }
-
+.popup.active {
+	display: block;
+}
 .popup__close {
 	width: 30px;
 	height: 30px;
@@ -106,8 +116,7 @@ main {
 .popup__close::after {
 	content: "\26CC";
 }
-
-#addForm {
+form {
 	display: grid;
-	gap:  20px;
+	gap: 20px;
 }
