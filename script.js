@@ -62,6 +62,7 @@ const createCard = function(cat, parent) {
 
 	const del = document.createElement("button");
 	del.innerText = "delete";
+	del.classList.add("delCat");
 	del.id = cat.id;
 	del.addEventListener("click", function(e) {
 		let id = e.target.id;
@@ -70,6 +71,7 @@ const createCard = function(cat, parent) {
 
 	const upd = document.createElement("button");
 	upd.innerText = "update";
+	upd.classList.add("updateCat");
 	upd.addEventListener("click", function(e) {
 		popupUpd.classList.add("active");
 		popupBlock.classList.add("active");

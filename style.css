@@ -120,3 +120,24 @@ form {
 	display: grid;
 	gap: 20px;
 }
+.btn:hover {
+	color: Purple;
+  }
+  .logo:hover {
+	color: Purple;
+  }
+  .updateCat {
+	border-radius: 4px;
+  }
+  .delCat {
+	border-radius: 4px;
+  }
+
+  .delCat:hover {
+	background-color: rgba(155, 22, 22, 0.715);
+	color: #fff;
+  }
+  .updateCat:hover {
+	color: #fff;
+	background-color: rgba(21, 112, 19, 0.591);
+  }
